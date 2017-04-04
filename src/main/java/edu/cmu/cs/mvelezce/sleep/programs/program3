@@ -1,0 +1,10 @@
+a=A
+b=B
+sleep(6)
+if(a) {
+    sleep(3)
+    b=1
+}
+if(b) {
+    sleep(1)
+}
