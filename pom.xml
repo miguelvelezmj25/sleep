@@ -7,7 +7,7 @@
     <version>0.1.0-SNAPSHOT</version>
     <inceptionYear>2017</inceptionYear>
     <packaging>jar</packaging>
-    <name>performance-mapper</name>
+    <name>sleep</name>
     <url>http://www.cs.cmu.edu/~mvelezce/</url>
 
     <properties>
