@@ -1,4 +1,4 @@
-package edu.cmu.cs.mvelezce.sleep.visitor;
+package edu.cmu.cs.mvelezce.sleep.interpreter.visitor;
 
 import edu.cmu.cs.mvelezce.sleep.ast.expression.*;
 import edu.cmu.cs.mvelezce.sleep.ast.statement.*;
@@ -14,7 +14,7 @@ public class ReplacerVisitor implements Visitor<Expression, Statement> {
     public ReplacerVisitor() { ; }
 
     @Override
-    public Expression visitExpressionBinary(BinaryExpression binaryExpression) {
+    public Expression visitBinaryExpression(BinaryExpression binaryExpression) {
         if(binaryExpression == null) {
             throw new IllegalArgumentException("The binaryExpression cannot be null");
         }
@@ -30,16 +30,16 @@ public class ReplacerVisitor implements Visitor<Expression, Statement> {
     }
 
     @Override
-    public Expression visitExpressionConstantConfiguration(ConfigurationConstantExpression configurationConstantExpression) {
-        if(configurationConstantExpression == null) {
-            throw new IllegalArgumentException("The configurationConstantExpression cannot be null");
+    public Expression visitConfigurationExpression(ConfigurationExpression configurationExpression) {
+        if(configurationExpression == null) {
+            throw new IllegalArgumentException("The configurationExpression cannot be null");
         }
 
-        return configurationConstantExpression;
+        return configurationExpression;
     }
 
     @Override
-    public Expression visitExpressionConstantInt(ConstantIntExpression constantIntExpression) {
+    public Expression visitConstantIntExpression(ConstantIntExpression constantIntExpression) {
         if(constantIntExpression == null) {
             throw new IllegalArgumentException("The constantIntExpression cannot be null");
         }
@@ -48,7 +48,7 @@ public class ReplacerVisitor implements Visitor<Expression, Statement> {
     }
 
     @Override
-    public Expression visitExpressionUnary(UnaryExpression unaryExpression) {
+    public Expression visitUnaryExpression(UnaryExpression unaryExpression) {
         if(unaryExpression == null) {
             throw new IllegalArgumentException("The unaryExpression cannot be null");
         }
@@ -63,7 +63,7 @@ public class ReplacerVisitor implements Visitor<Expression, Statement> {
     }
 
     @Override
-    public Expression visitExpressionVariable(VariableExpression variableExpression) {
+    public Expression visitVariableExpression(VariableExpression variableExpression) {
         if(variableExpression == null) {
             throw new IllegalArgumentException("The variableExpression cannot be null");
         }
@@ -72,7 +72,7 @@ public class ReplacerVisitor implements Visitor<Expression, Statement> {
     }
 
     @Override
-    public Statement visitStatementAssignment(AssignmentStatement assignmentStatement) {
+    public Statement visitAssignmentStatement(AssignmentStatement assignmentStatement) {
         if(assignmentStatement == null) {
             throw new IllegalArgumentException("The assignmentStatement cannot be null");
         }
@@ -88,7 +88,7 @@ public class ReplacerVisitor implements Visitor<Expression, Statement> {
     }
 
     @Override
-    public Statement visitStatementBlock(BlockStatement blockStatement) {
+    public Statement visitBlockStatement(BlockStatement blockStatement) {
         if(blockStatement == null) {
             throw new IllegalArgumentException("The  cannot be null");
         }
@@ -113,7 +113,7 @@ public class ReplacerVisitor implements Visitor<Expression, Statement> {
     }
 
     @Override
-    public Statement visitStatementIf(IfStatement ifStatement) {
+    public Statement visitIfStatement(IfStatement ifStatement) {
         if(ifStatement == null) {
             throw new IllegalArgumentException("The ifStatement cannot be null");
         }
@@ -129,7 +129,7 @@ public class ReplacerVisitor implements Visitor<Expression, Statement> {
     }
 
     @Override
-    public Statement visitStatementSleep(SleepStatement sleepStatement) {
+    public Statement visitSleepStatement(SleepStatement sleepStatement) {
         if(sleepStatement == null) {
             throw new IllegalArgumentException("The sleepStatement cannot be null");
         }
@@ -144,7 +144,7 @@ public class ReplacerVisitor implements Visitor<Expression, Statement> {
     }
 
     @Override
-    public Statement visitStatementWhile(WhileStatement whileStatement) {
+    public Statement visitWhileStatement(WhileStatement whileStatement) {
         if(whileStatement == null) {
             throw new IllegalArgumentException("The whileStatement cannot be null");
         }
@@ -159,18 +159,18 @@ public class ReplacerVisitor implements Visitor<Expression, Statement> {
         return new WhileStatement(condition, body);
     }
 
-    @Override
-    public Statement visitStatementTimed(TimedStatement timedStatement) {
-        if(timedStatement == null) {
-            throw new IllegalArgumentException("The timedStatement cannot be null");
-        }
-
-        Statement statements = timedStatement.getStatements();
-
-        if(timedStatement.getStatements().equals(statements)) {
-            return timedStatement;
-        }
-
-        return new TimedStatement(statements);
-    }
+//    TODO @Override
+//    public Statement visitTimedStatement(TimedStatement timedStatement) {
+//        if(timedStatement == null) {
+//            throw new IllegalArgumentException("The timedStatement cannot be null");
+//        }
+//
+//        Statement statements = timedStatement.getStatements();
+//
+//        if(timedStatement.getStatements().equals(statements)) {
+//            return timedStatement;
+//        }
+//
+//        return new TimedStatement(statements);
+//    }
 }

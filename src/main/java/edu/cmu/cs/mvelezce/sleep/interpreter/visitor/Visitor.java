@@ -1,4 +1,4 @@
-package edu.cmu.cs.mvelezce.sleep.visitor;
+package edu.cmu.cs.mvelezce.sleep.interpreter.visitor;
 
 import edu.cmu.cs.mvelezce.sleep.ast.expression.*;
 import edu.cmu.cs.mvelezce.sleep.ast.statement.*;
@@ -19,15 +19,15 @@ public interface Visitor <V,W> {
      * @param binaryExpression
      * @return
      */
-    V visitExpressionBinary(BinaryExpression binaryExpression);
+    V visitBinaryExpression(BinaryExpression binaryExpression);
 
     /**
-     * Evaluates an ConfigurationConstantExpression.
+     * Evaluates an ConfigurationExpression.
      *
-     * @param configurationConstantExpression
+     * @param configurationExpression
      * @return
      */
-    V visitExpressionConstantConfiguration(ConfigurationConstantExpression configurationConstantExpression);
+    V visitConfigurationExpression(ConfigurationExpression configurationExpression);
 
     /**
      * Evaluates an ConstantIntExpression.
@@ -35,7 +35,7 @@ public interface Visitor <V,W> {
      * @param constantIntExpression
      * @return
      */
-    V visitExpressionConstantInt(ConstantIntExpression constantIntExpression);
+    V visitConstantIntExpression(ConstantIntExpression constantIntExpression);
 
     /**
      * Evaluates an UnaryExpression.
@@ -43,7 +43,7 @@ public interface Visitor <V,W> {
      * @param unaryExpression
      * @return
      */
-    V visitExpressionUnary(UnaryExpression unaryExpression);
+    V visitUnaryExpression(UnaryExpression unaryExpression);
 
     /**
      * Evaluates an VariableExpression.
@@ -51,47 +51,47 @@ public interface Visitor <V,W> {
      * @param variableExpression
      * @return
      */
-    V visitExpressionVariable(VariableExpression variableExpression);
+    V visitVariableExpression(VariableExpression variableExpression);
 
     /**
      * Visit a AssignmentStatement.
      *
      * @param assignmentStatement
      */
-    W visitStatementAssignment(AssignmentStatement assignmentStatement);
+    W visitAssignmentStatement(AssignmentStatement assignmentStatement);
 
     /**
      * Visit a BlockStatement.
      *
      * @param blockStatement
      */
-    W visitStatementBlock(BlockStatement blockStatement);
+    W visitBlockStatement(BlockStatement blockStatement);
 
     /**
      * Visit a IfStatement.
      *
      * @param ifStatement
      */
-    W visitStatementIf(IfStatement ifStatement);
+    W visitIfStatement(IfStatement ifStatement);
 
     /**
      * Visit a SleepStatement.
      *
      * @param sleepStatement
      */
-    W visitStatementSleep(SleepStatement sleepStatement);
+    W visitSleepStatement(SleepStatement sleepStatement);
 
     /**
      * Visit a WhileStatement.
      *
      * @param whileStatement
      */
-    W visitStatementWhile(WhileStatement whileStatement);
+    W visitWhileStatement(WhileStatement whileStatement);
 
-    /**
-     * Visit a TimedStatement
-     *
-     * @param timedStatement
-     */
-    W visitStatementTimed(TimedStatement timedStatement);
+//    /**
+//     * TODO Visit a TimedStatement
+//     *
+//     * @param timedStatement
+//     */
+//    W visitTimedStatement(TimedStatement timedStatement);
 }

@@ -1,6 +1,6 @@
 package edu.cmu.cs.mvelezce.sleep.ast.statement;
 
-import edu.cmu.cs.mvelezce.sleep.visitor.Visitor;
+import edu.cmu.cs.mvelezce.sleep.interpreter.visitor.Visitor;
 import edu.cmu.cs.mvelezce.sleep.ast.expression.Expression;
 
 /**
@@ -23,7 +23,7 @@ public class SleepStatement extends Statement {
 
     @Override
     public <T,U> U accept(Visitor<T,U> visitor) {
-        return visitor.visitStatementSleep(this);
+        return visitor.visitSleepStatement(this);
     }
 
     /**

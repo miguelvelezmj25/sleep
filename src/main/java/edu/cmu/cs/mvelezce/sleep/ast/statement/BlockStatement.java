@@ -1,6 +1,6 @@
 package edu.cmu.cs.mvelezce.sleep.ast.statement;
 
-import edu.cmu.cs.mvelezce.sleep.visitor.Visitor;
+import edu.cmu.cs.mvelezce.sleep.interpreter.visitor.Visitor;
 
 import java.util.List;
 
@@ -30,7 +30,7 @@ public class BlockStatement extends Statement {
 
     @Override
     public <T,U> U accept(Visitor<T,U> visitor) {
-        return visitor.visitStatementBlock(this);
+        return visitor.visitBlockStatement(this);
     }
 
     /**

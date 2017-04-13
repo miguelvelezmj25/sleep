@@ -1,7 +1,7 @@
 package edu.cmu.cs.mvelezce.sleep.ast.statement;
 
 import edu.cmu.cs.mvelezce.sleep.ast.expression.VariableExpression;
-import edu.cmu.cs.mvelezce.sleep.visitor.Visitor;
+import edu.cmu.cs.mvelezce.sleep.interpreter.visitor.Visitor;
 import edu.cmu.cs.mvelezce.sleep.ast.expression.Expression;
 
 /**
@@ -29,7 +29,7 @@ public class AssignmentStatement extends Statement {
 
     @Override
     public <T,U> U accept(Visitor<T,U> visitor) {
-        return visitor.visitStatementAssignment(this);
+        return visitor.visitAssignmentStatement(this);
     }
 
     /**

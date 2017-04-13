@@ -1,6 +1,6 @@
 package edu.cmu.cs.mvelezce.sleep.ast.statement;
 
-import edu.cmu.cs.mvelezce.sleep.visitor.Visitor;
+import edu.cmu.cs.mvelezce.sleep.interpreter.visitor.Visitor;
 import edu.cmu.cs.mvelezce.sleep.ast.expression.Expression;
 import org.apache.commons.lang3.StringUtils;
 
@@ -36,7 +36,7 @@ public class WhileStatement extends Statement {
 
     @Override
     public <T,U> U accept(Visitor<T,U> visitor) {
-        return visitor.visitStatementWhile(this);
+        return visitor.visitWhileStatement(this);
     }
 
     /**

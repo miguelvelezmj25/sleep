@@ -1,6 +1,6 @@
 package edu.cmu.cs.mvelezce.sleep.ast.expression;
 
-import edu.cmu.cs.mvelezce.sleep.visitor.Visitor;
+import edu.cmu.cs.mvelezce.sleep.interpreter.visitor.Visitor;
 
 /**
  * A constant configuration expression. If this object is instantiated, we assume that it's value is true.
@@ -8,15 +8,15 @@ import edu.cmu.cs.mvelezce.sleep.visitor.Visitor;
  * @author Miguel Velez - miguelvelezmj25
  * @version 0.1.0.1
  */
-public class ConfigurationConstantExpression extends Expression {
+public class ConfigurationExpression extends Expression {
     private String name;
 
     /**
-     * Initialize an {@code ConfigurationConstantExpression}.
+     * Initialize an {@code ConfigurationExpression}.
      *
      * @param name
      */
-    public ConfigurationConstantExpression(String name) {
+    public ConfigurationExpression(String name) {
         if(name == null) {
             throw new IllegalArgumentException("The name cannot be null");
         }
@@ -40,7 +40,7 @@ public class ConfigurationConstantExpression extends Expression {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ConfigurationConstantExpression that = (ConfigurationConstantExpression) o;
+        ConfigurationExpression that = (ConfigurationExpression) o;
 
         return name.equals(that.name);
     }
@@ -52,7 +52,7 @@ public class ConfigurationConstantExpression extends Expression {
 
     @Override
     public <T,U> T accept(Visitor<T,U> visitor) {
-        return visitor.visitExpressionConstantConfiguration(this);
+        return visitor.visitConfigurationExpression(this);
     }
 
     @Override

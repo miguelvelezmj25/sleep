@@ -1,6 +1,6 @@
 package edu.cmu.cs.mvelezce.sleep.ast.expression;
 
-import edu.cmu.cs.mvelezce.sleep.visitor.Visitor;
+import edu.cmu.cs.mvelezce.sleep.interpreter.visitor.Visitor;
 
 /**
  * A constant integer expression. This is different than the IntValue object since this is not the result of evaluating
@@ -25,7 +25,7 @@ public class ConstantIntExpression extends Expression {
 
     @Override
     public <T,U> T accept(Visitor<T,U> visitor) {
-        return visitor.visitExpressionConstantInt(this);
+        return visitor.visitConstantIntExpression(this);
     }
 
     @Override

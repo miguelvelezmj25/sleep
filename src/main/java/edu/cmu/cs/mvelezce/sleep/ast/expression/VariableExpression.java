@@ -1,6 +1,6 @@
 package edu.cmu.cs.mvelezce.sleep.ast.expression;
 
-import edu.cmu.cs.mvelezce.sleep.visitor.Visitor;
+import edu.cmu.cs.mvelezce.sleep.interpreter.visitor.Visitor;
 
 /**
  * A variable expression.
@@ -33,7 +33,7 @@ public class VariableExpression extends Expression {
 
     @Override
     public <T,U> T accept(Visitor<T,U> visitor) {
-        return visitor.visitExpressionVariable(this);
+        return visitor.visitVariableExpression(this);
     }
 
     @Override

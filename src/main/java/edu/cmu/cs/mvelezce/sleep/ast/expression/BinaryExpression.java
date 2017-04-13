@@ -1,6 +1,6 @@
 package edu.cmu.cs.mvelezce.sleep.ast.expression;
 
-import edu.cmu.cs.mvelezce.sleep.visitor.Visitor;
+import edu.cmu.cs.mvelezce.sleep.interpreter.visitor.Visitor;
 
 /**
  * A binary expression of the form {@code expr op expr}.
@@ -44,7 +44,7 @@ public class BinaryExpression extends Expression {
 
     @Override
     public <T,U> T accept(Visitor<T,U> visitor) {
-        return visitor.visitExpressionBinary(this);
+        return visitor.visitBinaryExpression(this);
     }
 
     /**

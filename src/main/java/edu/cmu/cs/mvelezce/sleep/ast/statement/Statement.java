@@ -1,6 +1,6 @@
 package edu.cmu.cs.mvelezce.sleep.ast.statement;
 
-import edu.cmu.cs.mvelezce.sleep.visitor.Visitor;
+import edu.cmu.cs.mvelezce.sleep.interpreter.visitor.Visitor;
 import edu.cmu.cs.mvelezce.sleep.ast.Node;
 
 /**

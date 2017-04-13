@@ -1,6 +1,6 @@
 package edu.cmu.cs.mvelezce.sleep.ast.expression;
 
-import edu.cmu.cs.mvelezce.sleep.visitor.Visitor;
+import edu.cmu.cs.mvelezce.sleep.interpreter.visitor.Visitor;
 
 /**
  * A unary expression. It currently supports negation of expressions (!).
@@ -43,7 +43,7 @@ public class UnaryExpression extends Expression {
 
     @Override
     public <T,U> T accept(Visitor<T,U> visitor) {
-        return visitor.visitExpressionUnary(this);
+        return visitor.visitUnaryExpression(this);
     }
 
     @Override
