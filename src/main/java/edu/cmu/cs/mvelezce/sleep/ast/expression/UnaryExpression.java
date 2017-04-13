@@ -8,11 +8,11 @@ import edu.cmu.cs.mvelezce.sleep.visitor.Visitor;
  * @author Miguel Velez - miguelvelezmj25
  * @version 0.1.0.1
  */
-public class ExpressionUnary extends Expression {
+public class UnaryExpression extends Expression {
     private String operation;
     private Expression expression;
 
-    public ExpressionUnary(String operation, Expression expression) {
+    public UnaryExpression(String operation, Expression expression) {
         if(operation == null) {
             throw new IllegalArgumentException("The operation cannot be null");
         }
@@ -51,7 +51,7 @@ public class ExpressionUnary extends Expression {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ExpressionUnary that = (ExpressionUnary) o;
+        UnaryExpression that = (UnaryExpression) o;
 
         if (!operation.equals(that.operation)) return false;
         return expression.equals(that.expression);

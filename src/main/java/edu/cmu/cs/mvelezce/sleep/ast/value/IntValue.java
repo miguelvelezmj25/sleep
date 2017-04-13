@@ -1,15 +1,15 @@
 package edu.cmu.cs.mvelezce.sleep.ast.value;
 
 /**
- * A ValueInt that represent the result of evaluating an expression
+ * A IntValue that represent the result of evaluating an expression
  *
  * @author Miguel Velez - miguelvelezmj25
  * @version 0.1.0.1
  */
-public class ValueInt {
+public class IntValue {
     private final int value;
 
-    public ValueInt(int value) { this.value = value; }
+    public IntValue(int value) { this.value = value; }
 
     /**
      * Returns the value.
@@ -26,9 +26,9 @@ public class ValueInt {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ValueInt valueInt = (ValueInt) o;
+        IntValue intValue = (IntValue) o;
 
-        return value == valueInt.value;
+        return value == intValue.value;
     }
 
     @Override

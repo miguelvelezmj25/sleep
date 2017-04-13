@@ -10,17 +10,17 @@ import edu.cmu.cs.mvelezce.sleep.ast.expression.Expression;
  * @author Miguel Velez - miguelvelezmj25
  * @version 0.1.0.1
  */
-public class StatementIf extends Statement {
+public class IfStatement extends Statement {
     private Expression condition;
     private Statement thenBlock;
 
     /**
-     * Instantiates a {@code StatementIf}.
+     * Instantiates a {@code IfStatement}.
      *
      * @param condition
      * @param thenBlock
      */
-    public StatementIf(Expression condition, Statement thenBlock) {
+    public IfStatement(Expression condition, Statement thenBlock) {
         if(condition == null) {
             throw new IllegalArgumentException("The condition cannot be null");
         }

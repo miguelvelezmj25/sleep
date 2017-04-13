@@ -10,17 +10,17 @@ import java.util.List;
  * @author Miguel Velez - miguelvelezmj25
  * @version 0.1.0.1
  */
-public class StatementBlock extends Statement {
+public class BlockStatement extends Statement {
     private List<Statement> statements;
 
     // TODO List<? extends Statement> ?
 
     /**
-     * Instantiate a {@code StatementBlock}.
+     * Instantiate a {@code BlockStatement}.
      *
      * @param statements
      */
-    public StatementBlock(List<Statement> statements) {
+    public BlockStatement(List<Statement> statements) {
         if(statements == null) {
             throw new IllegalArgumentException("The statements cannot be null");
         }

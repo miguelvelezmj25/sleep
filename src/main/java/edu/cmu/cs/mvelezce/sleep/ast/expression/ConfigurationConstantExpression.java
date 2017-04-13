@@ -8,15 +8,15 @@ import edu.cmu.cs.mvelezce.sleep.visitor.Visitor;
  * @author Miguel Velez - miguelvelezmj25
  * @version 0.1.0.1
  */
-public class ExpressionConfigurationConstant extends Expression {
+public class ConfigurationConstantExpression extends Expression {
     private String name;
 
     /**
-     * Initialize an {@code ExpressionConfigurationConstant}.
+     * Initialize an {@code ConfigurationConstantExpression}.
      *
      * @param name
      */
-    public ExpressionConfigurationConstant(String name) {
+    public ConfigurationConstantExpression(String name) {
         if(name == null) {
             throw new IllegalArgumentException("The name cannot be null");
         }
@@ -40,7 +40,7 @@ public class ExpressionConfigurationConstant extends Expression {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ExpressionConfigurationConstant that = (ExpressionConfigurationConstant) o;
+        ConfigurationConstantExpression that = (ConfigurationConstantExpression) o;
 
         return name.equals(that.name);
     }

@@ -9,15 +9,15 @@ import edu.cmu.cs.mvelezce.sleep.ast.expression.Expression;
  * @author Miguel Velez - miguelvelezmj25
  * @version 0.1.0.1
  */
-public class StatementSleep extends Statement {
+public class SleepStatement extends Statement {
     private Expression time;
 
     /**
-     * Instantiates a {@code StatementSleep}.
+     * Instantiates a {@code SleepStatement}.
      *
      * @param time
      */
-    public StatementSleep(Expression time) {
+    public SleepStatement(Expression time) {
         this.time = time;
     }
 

@@ -1,8 +1,8 @@
 package edu.cmu.cs.mvelezce.sleep.ast.statement;
 
+import edu.cmu.cs.mvelezce.sleep.ast.expression.VariableExpression;
 import edu.cmu.cs.mvelezce.sleep.visitor.Visitor;
 import edu.cmu.cs.mvelezce.sleep.ast.expression.Expression;
-import edu.cmu.cs.mvelezce.sleep.ast.expression.ExpressionVariable;
 
 /**
  * An assignment statement of the form {@code exprVariable op expr}.
@@ -10,11 +10,11 @@ import edu.cmu.cs.mvelezce.sleep.ast.expression.ExpressionVariable;
  * @author Miguel Velez - miguelvelezmj25
  * @version 0.1.0.1
  */
-public class StatementAssignment extends Statement {
-    private ExpressionVariable variable;
+public class AssignmentStatement extends Statement {
+    private VariableExpression variable;
     private Expression right;
 
-    public StatementAssignment(ExpressionVariable variable, Expression right) {
+    public AssignmentStatement(VariableExpression variable, Expression right) {
         if(variable == null) {
             throw new IllegalArgumentException("The variable cannot be null");
         }
@@ -37,7 +37,7 @@ public class StatementAssignment extends Statement {
      *
      * @return
      */
-    public ExpressionVariable getVariable() { return this.variable; }
+    public VariableExpression getVariable() { return this.variable; }
 
     /**
      * Returns the expression of the assignment.

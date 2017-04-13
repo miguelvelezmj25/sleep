@@ -8,19 +8,19 @@ import edu.cmu.cs.mvelezce.sleep.visitor.Visitor;
  * @author Miguel Velez - miguelvelezmj25
  * @version 0.1.0.1
  */
-public class ExpressionBinary extends Expression {
+public class BinaryExpression extends Expression {
     private Expression left;
     private String operation;
     private Expression right;
 
     /**
-     * Initialize an {@code ExpressionBinary}.
+     * Initialize an {@code BinaryExpression}.
      *
      * @param left
      * @param operation
      * @param right
      */
-    public ExpressionBinary(Expression left, String operation, Expression right) {
+    public BinaryExpression(Expression left, String operation, Expression right) {
         if(left == null) {
             throw new IllegalAccessError("The left expression cannot be null");
         }
@@ -73,7 +73,7 @@ public class ExpressionBinary extends Expression {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ExpressionBinary that = (ExpressionBinary) o;
+        BinaryExpression that = (BinaryExpression) o;
 
         if (!left.equals(that.left)) return false;
         if (!operation.equals(that.operation)) return false;

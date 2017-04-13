@@ -10,18 +10,18 @@ import org.apache.commons.lang3.StringUtils;
  * @author Miguel Velez - miguelvelezmj25
  * @version 0.1.0.1
  */
-public class StatementWhile extends Statement {
+public class WhileStatement extends Statement {
 // TODO automatic increment
     private Expression condition;
     private Statement body;
 
     /**
-     * Instantiates a {@code StatementWhile}.
+     * Instantiates a {@code WhileStatement}.
      *
      * @param condition
      * @param body
      */
-    public StatementWhile(Expression condition, Statement body) {
+    public WhileStatement(Expression condition, Statement body) {
         if(condition == null) {
             throw new IllegalArgumentException("The condition cannot be null");
         }

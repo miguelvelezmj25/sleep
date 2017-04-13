@@ -8,15 +8,15 @@ import edu.cmu.cs.mvelezce.sleep.visitor.Visitor;
  * @author Miguel Velez - miguelvelezmj25
  * @version 0.1.0.1
  */
-public class StatementTimed extends Statement {
+public class TimedStatement extends Statement {
     private Statement statements;
 
     /**
-     * Instantiates a {@code StatementTimed}.
+     * Instantiates a {@code TimedStatement}.
      *
      * @param statements
      */
-    public StatementTimed(Statement statements) {
+    public TimedStatement(Statement statements) {
         if(statements == null) {
             throw new IllegalArgumentException("The statements cannot be null");
         }

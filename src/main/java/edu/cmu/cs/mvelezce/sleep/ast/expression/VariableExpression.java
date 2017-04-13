@@ -8,10 +8,10 @@ import edu.cmu.cs.mvelezce.sleep.visitor.Visitor;
  * @author Miguel Velez - miguelvelezmj25
  * @version 0.1.0.1
  */
-public class ExpressionVariable extends Expression {
+public class VariableExpression extends Expression {
     private String name;
 
-    public ExpressionVariable(String name) {
+    public VariableExpression(String name) {
         if(name == null) {
             throw new IllegalArgumentException("The name cannot be null");
         }
@@ -41,7 +41,7 @@ public class ExpressionVariable extends Expression {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ExpressionVariable that = (ExpressionVariable) o;
+        VariableExpression that = (VariableExpression) o;
 
         return name.equals(that.name);
     }
