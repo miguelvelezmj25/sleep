@@ -1,5 +1,6 @@
 package edu.cmu.cs.mvelezce.sleep.interpreter.visitor;
 
+import edu.cmu.cs.mvelezce.sleep.ast.Program;
 import edu.cmu.cs.mvelezce.sleep.ast.expression.*;
 import edu.cmu.cs.mvelezce.sleep.ast.statement.*;
 
@@ -88,10 +89,10 @@ public interface Visitor <V,W> {
      */
     W visitWhileStatement(WhileStatement whileStatement);
 
-//    /**
-//     * TODO Visit a TimedStatement
-//     *
-//     * @param timedStatement
-//     */
-//    W visitTimedStatement(TimedStatement timedStatement);
+    /**
+     * Visit a Program.
+     * @param program
+     * @return
+     */
+    W visitProgram(Program program);
 }

@@ -23,11 +23,11 @@ public class SleepInterpreterTest {
     @Test
     public void testEvaluate1() throws Exception {
         // Compile
-        String program = Helper.loadFile(SleepInterpreterTest.PROGRAMS_PATH + "program1");
+        String programFile = Helper.loadFile(SleepInterpreterTest.PROGRAMS_PATH + "program1");
 
-        Lexer lexer = new Lexer(program);
+        Lexer lexer = new Lexer(programFile);
         Parser parser = new Parser(lexer);
-        Statement ast = parser.parse();
+        Statement program = parser.parse();
 
         // Configurations
         Set<String> activatedConfigurations = new HashSet<>();
@@ -35,7 +35,7 @@ public class SleepInterpreterTest {
         activatedConfigurations.add("B");
 
 
-        SleepInterpreter interpreter = new SleepInterpreter(ast);
+        SleepInterpreter interpreter = new SleepInterpreter(program);
         interpreter.evaluate(activatedConfigurations);
 
         // Store
@@ -50,18 +50,18 @@ public class SleepInterpreterTest {
     @Test
     public void testEvaluate2() throws Exception {
         // Compile
-        String program = Helper.loadFile(SleepInterpreterTest.PROGRAMS_PATH + "program2");
+        String programFile = Helper.loadFile(SleepInterpreterTest.PROGRAMS_PATH + "program2");
 
-        Lexer lexer = new Lexer(program);
+        Lexer lexer = new Lexer(programFile);
         Parser parser = new Parser(lexer);
-        Statement ast = parser.parse();
+        Statement program = parser.parse();
 
         // Configurations
         Set<String> activatedConfigurations = new HashSet<>();
         activatedConfigurations.add("A");
 
         // Execute
-        SleepInterpreter interpreter = new SleepInterpreter(ast);
+        SleepInterpreter interpreter = new SleepInterpreter(program);
         interpreter.evaluate(activatedConfigurations);
 
         // Store
@@ -76,11 +76,11 @@ public class SleepInterpreterTest {
     @Test
     public void testEvaluate3() throws Exception {
         // Compile
-        String program = Helper.loadFile(SleepInterpreterTest.PROGRAMS_PATH + "program3");
+        String programFile = Helper.loadFile(SleepInterpreterTest.PROGRAMS_PATH + "program3");
 
-        Lexer lexer = new Lexer(program);
+        Lexer lexer = new Lexer(programFile);
         Parser parser = new Parser(lexer);
-        Statement ast = parser.parse();
+        Statement program = parser.parse();
 
         // Configurations
         Set<String> activatedConfigurations = new HashSet<>();
@@ -88,7 +88,7 @@ public class SleepInterpreterTest {
         activatedConfigurations.add("B");
 
         // Execute
-        SleepInterpreter interpreter = new SleepInterpreter(ast);
+        SleepInterpreter interpreter = new SleepInterpreter(program);
         interpreter.evaluate(activatedConfigurations);
 
         // Store
@@ -103,11 +103,11 @@ public class SleepInterpreterTest {
     @Test
     public void testEvaluate4() throws Exception {
         // Compile
-        String program = Helper.loadFile(SleepInterpreterTest.PROGRAMS_PATH + "program4");
+        String programFile = Helper.loadFile(SleepInterpreterTest.PROGRAMS_PATH + "program4");
 
-        Lexer lexer = new Lexer(program);
+        Lexer lexer = new Lexer(programFile);
         Parser parser = new Parser(lexer);
-        Statement ast = parser.parse();
+        Statement program = parser.parse();
 
         // Configurations
         Set<String> activatedConfigurations = new HashSet<>();
@@ -115,7 +115,7 @@ public class SleepInterpreterTest {
         activatedConfigurations.add("B");
 
         // Execute
-        SleepInterpreter interpreter = new SleepInterpreter(ast);
+        SleepInterpreter interpreter = new SleepInterpreter(program);
         interpreter.evaluate(activatedConfigurations);
 
         // Store
@@ -130,11 +130,11 @@ public class SleepInterpreterTest {
     @Test
     public void testEvaluate5() throws Exception {
         // Compile
-        String program = Helper.loadFile(SleepInterpreterTest.PROGRAMS_PATH + "program5");
+        String programFile = Helper.loadFile(SleepInterpreterTest.PROGRAMS_PATH + "program5");
 
-        Lexer lexer = new Lexer(program);
+        Lexer lexer = new Lexer(programFile);
         Parser parser = new Parser(lexer);
-        Statement ast = parser.parse();
+        Statement program = parser.parse();
 
         // Configurations
         Set<String> activatedConfigurations = new HashSet<>();
@@ -142,7 +142,7 @@ public class SleepInterpreterTest {
         activatedConfigurations.add("B");
 
         // Execute
-        SleepInterpreter interpreter = new SleepInterpreter(ast);
+        SleepInterpreter interpreter = new SleepInterpreter(program);
         interpreter.evaluate(activatedConfigurations);
 
         // Store
@@ -157,11 +157,11 @@ public class SleepInterpreterTest {
     @Test
     public void testEvaluate6() throws Exception {
         // Compile
-        String program = Helper.loadFile(SleepInterpreterTest.PROGRAMS_PATH + "program6");
+        String programFile = Helper.loadFile(SleepInterpreterTest.PROGRAMS_PATH + "program6");
 
-        Lexer lexer = new Lexer(program);
+        Lexer lexer = new Lexer(programFile);
         Parser parser = new Parser(lexer);
-        Statement ast = parser.parse();
+        Statement program = parser.parse();
 
         // Configurations
         Set<String> activatedConfigurations = new HashSet<>();
@@ -170,7 +170,7 @@ public class SleepInterpreterTest {
         activatedConfigurations.add("C");
 
         // Execute
-        SleepInterpreter interpreter = new SleepInterpreter(ast);
+        SleepInterpreter interpreter = new SleepInterpreter(program);
         interpreter.evaluate(activatedConfigurations);
 
         // Store
@@ -187,11 +187,11 @@ public class SleepInterpreterTest {
     @Test
     public void testEvaluate7() throws Exception {
         // Compile
-        String program = Helper.loadFile(SleepInterpreterTest.PROGRAMS_PATH + "program7");
+        String programFile = Helper.loadFile(SleepInterpreterTest.PROGRAMS_PATH + "program7");
 
-        Lexer lexer = new Lexer(program);
+        Lexer lexer = new Lexer(programFile);
         Parser parser = new Parser(lexer);
-        Statement ast = parser.parse();
+        Statement program = parser.parse();
 
         // Configurations
         Set<String> activatedConfigurations = new HashSet<>();
@@ -200,7 +200,7 @@ public class SleepInterpreterTest {
         activatedConfigurations.add("D");
 
         // Execute
-        SleepInterpreter interpreter = new SleepInterpreter(ast);
+        SleepInterpreter interpreter = new SleepInterpreter(program);
         interpreter.evaluate(activatedConfigurations);
 
         // Store
@@ -217,17 +217,17 @@ public class SleepInterpreterTest {
     @Test
     public void testEvaluate8() throws Exception {
         // Compile
-        String program = Helper.loadFile(SleepInterpreterTest.PROGRAMS_PATH + "program8");
+        String programFile = Helper.loadFile(SleepInterpreterTest.PROGRAMS_PATH + "program8");
 
-        Lexer lexer = new Lexer(program);
+        Lexer lexer = new Lexer(programFile);
         Parser parser = new Parser(lexer);
-        Statement ast = parser.parse();
+        Statement program = parser.parse();
 
         // Configurations
         Set<String> activatedConfigurations = new HashSet<>();
 
         // Execute
-        SleepInterpreter interpreter = new SleepInterpreter(ast);
+        SleepInterpreter interpreter = new SleepInterpreter(program);
         interpreter.evaluate(activatedConfigurations);
 
         // Store
@@ -243,18 +243,18 @@ public class SleepInterpreterTest {
     @Test
     public void testEvaluate9() throws Exception {
         // Compile
-        String program = Helper.loadFile(SleepInterpreterTest.PROGRAMS_PATH + "program9");
+        String programFile = Helper.loadFile(SleepInterpreterTest.PROGRAMS_PATH + "program9");
 
-        Lexer lexer = new Lexer(program);
+        Lexer lexer = new Lexer(programFile);
         Parser parser = new Parser(lexer);
-        Statement ast = parser.parse();
+        Statement program = parser.parse();
 
         // Configurations
         Set<String> activatedConfigurations = new HashSet<>();
         activatedConfigurations.add("A");
 
         // Execute
-        SleepInterpreter interpreter = new SleepInterpreter(ast);
+        SleepInterpreter interpreter = new SleepInterpreter(program);
         interpreter.evaluate(activatedConfigurations);
 
         // Store
@@ -268,11 +268,11 @@ public class SleepInterpreterTest {
     @Test
     public void testEvaluate10() throws Exception {
         // Compile
-        String program = Helper.loadFile(SleepInterpreterTest.PROGRAMS_PATH + "program10");
+        String programFile = Helper.loadFile(SleepInterpreterTest.PROGRAMS_PATH + "program10");
 
-        Lexer lexer = new Lexer(program);
+        Lexer lexer = new Lexer(programFile);
         Parser parser = new Parser(lexer);
-        Statement ast = parser.parse();
+        Statement program = parser.parse();
 
         // Configurations
         Set<String> activatedConfigurations = new HashSet<>();
@@ -281,7 +281,7 @@ public class SleepInterpreterTest {
         activatedConfigurations.add("D");
 
         // Execute
-        SleepInterpreter interpreter = new SleepInterpreter(ast);
+        SleepInterpreter interpreter = new SleepInterpreter(program);
         interpreter.evaluate(activatedConfigurations);
 
         // Store

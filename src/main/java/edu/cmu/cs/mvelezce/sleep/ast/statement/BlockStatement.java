@@ -42,10 +42,10 @@ public class BlockStatement extends Statement {
 
     @Override
     public String toString() {
-        String result = "";
+        StringBuilder result = new StringBuilder();
 
         for(Statement statement : this.statements) {
-            result += statement; // + "\n";
+            result.append(statement); // + "\n";
         }
 
         return result.substring(0, result.length());

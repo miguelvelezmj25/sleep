@@ -1,5 +1,6 @@
 package edu.cmu.cs.mvelezce.sleep.interpreter;
 
+import edu.cmu.cs.mvelezce.sleep.ast.Program;
 import edu.cmu.cs.mvelezce.sleep.ast.expression.*;
 import edu.cmu.cs.mvelezce.sleep.ast.statement.*;
 import edu.cmu.cs.mvelezce.sleep.ast.value.IntValue;
@@ -149,6 +150,13 @@ public class SleepInterpreter implements Visitor<IntValue, Void> {
     public Void visitWhileStatement(WhileStatement whileStatement) {
         whileStatement.getCondition().accept(this);
         whileStatement.getBody().accept(this);
+
+        return null;
+    }
+
+    @Override
+    public Void visitProgram(Program program) {
+        program.getBlockStatement().accept(this);
 
         return null;
     }

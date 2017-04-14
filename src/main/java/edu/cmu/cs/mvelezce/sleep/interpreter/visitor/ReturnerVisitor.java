@@ -1,5 +1,6 @@
 package edu.cmu.cs.mvelezce.sleep.interpreter.visitor;
 
+import edu.cmu.cs.mvelezce.sleep.ast.Program;
 import edu.cmu.cs.mvelezce.sleep.ast.expression.*;
 import edu.cmu.cs.mvelezce.sleep.ast.statement.*;
 
@@ -121,13 +122,14 @@ public class ReturnerVisitor implements Visitor<Expression, Void> {
         return null;
     }
 
-//    TODO @Override
-//    public Void visitTimedStatement(TimedStatement timedStatement) {
-//        if(timedStatement == null) {
-//            throw new IllegalArgumentException("The timedStatement cannot be null");
-//        }
-//
-//        timedStatement.getStatements().accept(this);
-//        return null;
-//    }
+    @Override
+    public Void visitProgram(Program program) {
+        if(program == null) {
+            throw new IllegalArgumentException("The program cannot be null");
+        }
+
+        program.getBlockStatement().accept(this);
+        return null;
+    }
+
 }

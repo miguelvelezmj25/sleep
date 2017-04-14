@@ -1,5 +1,6 @@
 package edu.cmu.cs.mvelezce.sleep.parser;
 
+import edu.cmu.cs.mvelezce.sleep.ast.Program;
 import edu.cmu.cs.mvelezce.sleep.ast.Tag;
 import edu.cmu.cs.mvelezce.sleep.ast.Token;
 import edu.cmu.cs.mvelezce.sleep.ast.expression.*;
@@ -23,14 +24,15 @@ public class Parser {
     }
 
     public Statement parse() {
-        List<Statement> program = new ArrayList<>();
-        program.add(this.stmt());
+        List<Statement> blockStatements = new ArrayList<>();
+        blockStatements.add(this.stmt());
 
         while(this.currentToken.getTag() != Tag.EOF) {
-            program.add(this.stmt());
+            blockStatements.add(this.stmt());
         }
 
-        return new BlockStatement(program);
+        BlockStatement blockStatement = new BlockStatement(blockStatements);
+        return new Program(blockStatement);
     }
 
     private Statement stmt() {

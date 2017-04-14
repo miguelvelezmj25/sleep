@@ -1,5 +1,6 @@
 package edu.cmu.cs.mvelezce.sleep.interpreter.visitor;
 
+import edu.cmu.cs.mvelezce.sleep.ast.Program;
 import edu.cmu.cs.mvelezce.sleep.ast.expression.*;
 import edu.cmu.cs.mvelezce.sleep.ast.statement.*;
 
@@ -159,18 +160,19 @@ public class ReplacerVisitor implements Visitor<Expression, Statement> {
         return new WhileStatement(condition, body);
     }
 
-//    TODO @Override
-//    public Statement visitTimedStatement(TimedStatement timedStatement) {
-//        if(timedStatement == null) {
-//            throw new IllegalArgumentException("The timedStatement cannot be null");
-//        }
-//
-//        Statement statements = timedStatement.getStatements();
-//
-//        if(timedStatement.getStatements().equals(statements)) {
-//            return timedStatement;
-//        }
-//
-//        return new TimedStatement(statements);
-//    }
+    @Override
+    public Statement visitProgram(Program program) {
+        if(program == null) {
+            throw new IllegalArgumentException("The program cannot be null");
+        }
+
+        BlockStatement blockStatement = (BlockStatement) program.getBlockStatement().accept(this);
+
+        if(program.getBlockStatement().equals(blockStatement)) {
+            return program;
+        }
+
+        return new Program(blockStatement);
+    }
+
 }
