@@ -23,7 +23,7 @@ public class Parser {
         this.currentToken = this.lexer.getNextToken();
     }
 
-    public Statement parse() {
+    public Program parse() {
         List<Statement> blockStatements = new ArrayList<>();
         blockStatements.add(this.stmt());
 
