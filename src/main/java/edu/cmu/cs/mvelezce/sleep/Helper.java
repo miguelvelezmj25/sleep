@@ -1,5 +1,6 @@
 package edu.cmu.cs.mvelezce.sleep;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 /**
  * This is a helper class for the language.
@@ -16,7 +17,7 @@ public class Helper {
      * @return
      * @throws Exception
      */
-    public static String loadFile(String name) throws Exception {
+    public static String loadFile(String name) throws FileNotFoundException {
         Scanner s = new Scanner(new File(name));
         String file = "";
         while (s.hasNext()) {
