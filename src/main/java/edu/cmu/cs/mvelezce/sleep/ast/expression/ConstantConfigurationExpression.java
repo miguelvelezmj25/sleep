@@ -8,15 +8,15 @@ import edu.cmu.cs.mvelezce.sleep.interpreter.visitor.Visitor;
  * @author Miguel Velez - miguelvelezmj25
  * @version 0.1.0.1
  */
-public class ConfigurationExpression extends Expression {
+public class ConstantConfigurationExpression extends Expression {
     private String name;
 
     /**
-     * Initialize an {@code ConfigurationExpression}.
+     * Initialize an {@code ConstantConfigurationExpression}.
      *
      * @param name
      */
-    public ConfigurationExpression(String name) {
+    public ConstantConfigurationExpression(String name) {
         if(name == null) {
             throw new IllegalArgumentException("The name cannot be null");
         }
@@ -40,7 +40,7 @@ public class ConfigurationExpression extends Expression {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ConfigurationExpression that = (ConfigurationExpression) o;
+        ConstantConfigurationExpression that = (ConstantConfigurationExpression) o;
 
         return name.equals(that.name);
     }
@@ -52,7 +52,7 @@ public class ConfigurationExpression extends Expression {
 
     @Override
     public <T,U> T accept(Visitor<T,U> visitor) {
-        return visitor.visitConfigurationExpression(this);
+        return visitor.visitConstantConfigurationExpression(this);
     }
 
     @Override

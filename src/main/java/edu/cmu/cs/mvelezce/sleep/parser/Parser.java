@@ -42,7 +42,6 @@ public class Parser {
             this.checkToken(Tag.VAR);
             VariableExpression variable = new VariableExpression(token.getValue());
 
-            token = this.currentToken;
             this.checkToken(Tag.EQUAL);
 
             return new AssignmentStatement(variable, this.expr());
@@ -118,7 +117,7 @@ public class Parser {
 
         if(token.getTag() == Tag.CONFIG) {
             this.checkToken(Tag.CONFIG);
-            return new ConfigurationExpression(token.getValue());
+            return new ConstantConfigurationExpression(token.getValue());
         }
 
         throw new IllegalArgumentException("Error while parsing input");

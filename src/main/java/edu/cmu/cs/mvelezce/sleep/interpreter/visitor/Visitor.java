@@ -23,12 +23,12 @@ public interface Visitor <V,W> {
     V visitBinaryExpression(BinaryExpression binaryExpression);
 
     /**
-     * Evaluates an ConfigurationExpression.
+     * Evaluates an ConstantConfigurationExpression.
      *
-     * @param configurationExpression
+     * @param constantConfigurationExpression
      * @return
      */
-    V visitConfigurationExpression(ConfigurationExpression configurationExpression);
+    V visitConstantConfigurationExpression(ConstantConfigurationExpression constantConfigurationExpression);
 
     /**
      * Evaluates an ConstantIntExpression.

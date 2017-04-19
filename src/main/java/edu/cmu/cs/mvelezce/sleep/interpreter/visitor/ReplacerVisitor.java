@@ -31,12 +31,12 @@ public class ReplacerVisitor implements Visitor<Expression, Statement> {
     }
 
     @Override
-    public Expression visitConfigurationExpression(ConfigurationExpression configurationExpression) {
-        if(configurationExpression == null) {
-            throw new IllegalArgumentException("The configurationExpression cannot be null");
+    public Expression visitConstantConfigurationExpression(ConstantConfigurationExpression constantConfigurationExpression) {
+        if(constantConfigurationExpression == null) {
+            throw new IllegalArgumentException("The constantConfigurationExpression cannot be null");
         }
 
-        return configurationExpression;
+        return constantConfigurationExpression;
     }
 
     @Override

@@ -72,10 +72,10 @@ public class SleepInterpreter implements Visitor<IntValue, Void> {
     }
 
     @Override
-    public IntValue visitConfigurationExpression(ConfigurationExpression configurationExpression) {
+    public IntValue visitConstantConfigurationExpression(ConstantConfigurationExpression constantConfigurationExpression) {
         int value = 0;
 
-        if(this.activatedConfigurations.contains(configurationExpression.getName())) {
+        if(this.activatedConfigurations.contains(constantConfigurationExpression.getName())) {
             value = 1;
         }
 
